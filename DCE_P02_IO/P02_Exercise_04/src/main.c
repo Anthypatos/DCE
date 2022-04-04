@@ -2,7 +2,7 @@
 	@file main
 	@author Juan de la Cruz Caravaca Guerrero
 	@date 03/04/2022
-	@brief LEDs behavior change according to the state of a pushbutton.
+	@brief LEDs behavior changes according to the state of a pushbutton.
 	@par Description:
 	The LEDs and the PUSHBUTTON are connected to the PORT 
 	specified in "PORTs.h" 
@@ -47,7 +47,10 @@ int main(void)
 		else 
 		{
 			/// 3) else switch ON odd LEDs and OFF even ones
-			PORTD = (1 << PORTD3) | (1 << PORTD5);
+			/// NOTE: all PORTD pins are disabled at this point because of the if-else structure
+			/// Hence, performing an OR operation on PORTD is a valid solution since the
+			/// pull-up resistor on PORTD2 stays ON
+			PORTD |= (1 << PORTD3) | (1 << PORTD5);
 		}
 	}
 }
