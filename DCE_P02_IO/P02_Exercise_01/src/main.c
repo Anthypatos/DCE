@@ -11,6 +11,7 @@
 
 /// Define CPU frequency as 16 MHz 
 #define F_CPU 16000000UL
+
 #include <avr/io.h>
 #include <util/delay.h>
 
@@ -23,7 +24,6 @@ int main(void)
 	/** ------------ LOOP -------------------
 				For blinking LED 
 	-------------------------------------*/
-	
 	while (1)
 	{
 		/// 1) LED OFF by clearing the pin PD3

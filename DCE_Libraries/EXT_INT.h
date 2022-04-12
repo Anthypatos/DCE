@@ -3,17 +3,17 @@
 
 #include <avr/io.h>
 
-inline static void INT0_triggerLow() { EICRA &= ~(1 << ISC01) & ~(1 << ISC00); }
-inline static void INT0_triggerChange() { EICRA &= ~(1 << ISC01); EICRA |= (1 << ISC00); }
-inline static void INT0_triggerFalling() { EICRA |= (1 << ISC01); EICRA &= ~(1 << ISC00); }
-inline static void INT0_triggerRising() { EICRA |= (1 << ISC01) | (1 << ISC00); }
+#define LOW_LEVEL 0 // It is the decimal value equivalent to ICS01=0 and ICS00=0
+#define CHANGE 1 // It is the decimal value equivalent to ICS01=0 and ICS00=1
+#define FALLING 2 // It is the decimal value equivalent to ICS01=1 and ICS00=0
+#define RISING 3 // It is the decimal value equivalent to ICS01=1 and ICS00=1
+
+/// -------------- INLINE FUNCTIONS ----------------
+inline static void INT0_config(uint8_t typeTrigger) { EICRA &= 11111100; EICRA |= typeTrigger; }
 inline static void INT0_enable() { EIMSK |= (1 << INT0); }
 inline static void INT0_disable() { EIMSK &= ~(1 << INT0); }
 
-inline static void INT1_triggerLow() { EICRA &= ~(1 << ISC11) & ~(1 << ISC10); }
-inline static void INT1_triggerChange() { EICRA &= ~(1 << ISC11); EICRA |= (1 << ISC10); }
-inline static void INT1_triggerFalling() { EICRA |= (1 << ISC11); EICRA &= ~(1 << ISC10);  }
-inline static void INT1_triggerRising() { EICRA |= (1 << ISC11) | (1 << ISC10); }
+inline static void INT1_config(uint8_t typeTrigger) { EICRA &= 11110011; EICRA |= (typeTrigger << 2); }
 inline static void INT1_enable() { EIMSK |= (1 << INT1); }
 inline static void INT1_disable() { EIMSK &= ~(1 << INT1); }
 

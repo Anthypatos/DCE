@@ -3,24 +3,26 @@
 #include <util/delay.h>
 #include "USART.h"
 
+/// ----------- FUNCTIONS -------------
 void USART0_putchar(unsigned char data)
 {
-	// (Polling) Wait for the transmit buffer/register is empty
-
+	// (Polling) Wait for empty transmit buffer/register
+	// Wait until the USART is available
 	// While the bit UDRE0 is '0' keeps waiting
 	// (there is a transmission in progress, wait...)
 	while (!( UCSR0A & (1<<UDRE0)));
 	// When UDRE0=1, the USART is available for transmitting.
-	// Write the data for sending in the register.
+	// Write the data to send in the register.
 	UDR0 = data;
 }
 
 
 void USART0_putString(char *strPointer)
 {
-	// While the NULL char (end of line) is not reached
+	// (Polling) While the NULL char (end of line) is not reached
 	// send a new character of the string.
-	while(*strPointer){
+	while(*strPointer)
+	{
 		USART0_putchar(*strPointer);
 		strPointer++;
 	}	

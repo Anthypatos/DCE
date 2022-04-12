@@ -7,20 +7,21 @@
 	The LED and the PUSHBUTTON is connected to the PORT 
 	specified in "PORTs.h" 
 */
+
 #define F_CPU 16000000UL
+
 #include <avr/io.h>
-#include <util/delay.h>
-#include "../../../DCE_Libraries/PORTS.h"
+#include "PORTS.h"
 
 int main(void)
 {
 	/** ------------ SETUP ----------------------------------------*/
 	/// 1) Set LED pin as output. PUSHBUTTON LED is input by default. 
-	DDRD |= (1 << DDD3);
-	
+	GPIO_PORT_MODE |= (1 << LED_PIN_MODE);
+
 	/// 2) Enable pull-up for the PUSHBUTTON 
-	PORTD |= (1 << PORTD2);
-	
+	GPIO_OUT |= (1 << BUTTON_RPULLUP);
+
 	/** ------------ LOOP ----------------------------------------
 	Read the state of the pushbutton and shows it onto a LED.
 	Keep in mind that the read value when the PUSHBUTTON
@@ -30,21 +31,21 @@ int main(void)
 	{
 		/// 1) Read pushbutton
 		/// 2) If PUSHBUTTON is pressed
-		if (!(PIND & (1 << PIND2))) 
+		if (!(GPIO_IN & (1 << BUTTON_PIN))) 
 		{
 			// ------------------------------------------------------------------
-			// If (XXXX X1XX & 0000 0100 = 0000 0100) ? PIND2=’1’ (released)
-			// If (XXXX X0XX & 0000 0100 = 0000 0000) ? PIND2=’0’ (pressed)
+			// If (XXXX X1XX & 0000 0100 = 0000 0100) ïƒ  PIND2='1' (released)
+			// If (XXXX X0XX & 0000 0100 = 0000 0000) ïƒ  PIND2='0' (pressed)
 			// 0x00 -> FALSE Something non-zero ->TRUE.
 			//--------------------------------------------------------------------
 
 			/// Switch ON LED
-			PORTD |= (1 << PORTD3);
+			GPIO_OUT |= (1 << LED_PIN);
 		}
-		else 
+		else
 		{
 			/// 3) else switch OFF LED
-			PORTD &= (~(1 << PORTD3));
+			GPIO_OUT &= (~(1 << LED_PIN));
 		}
 	}
 }
