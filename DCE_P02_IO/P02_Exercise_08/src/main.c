@@ -4,8 +4,7 @@
 	@date	12/04/2022
     @brief	The state of a LED is changed by means of a push button.
     @par	Description:
-			A LED is toggled by means of a debounced pushbutton by using a FSM. 
-			Only the bouncing when pushing the button is taken into account.				
+			A LED is toggled by means of a debounced pushbutton by using a FSM.			
 */
 
 #define F_CPU	16000000UL
