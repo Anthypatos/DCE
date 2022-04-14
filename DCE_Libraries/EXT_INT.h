@@ -3,7 +3,6 @@
 
 #include <avr/io.h>
 #include <stdint.h>
-#include <stdbool.h>
 
 #define LOW_LEVEL	0 // It is the decimal value equivalent to ICS01=0 and ICS00=0
 #define CHANGE		1 // It is the decimal value equivalent to ICS01=0 and ICS00=1
@@ -33,5 +32,10 @@ inline static void PCINT2_enable() { PCICR |= (1 << PCIE2); }
 inline static void PCINT2_disable() { PCICR &= ~(1 << PCIE2); }
 inline static void PCINT2_enableBit(uint8_t pin) { PCMSK2 |= (1 << pin); }
 inline static void PCINT2_disableBit(uint8_t pin) { PCMSK2 &= ~(1 << pin); }
+
+inline static void USART0_enaInterrupt_RX() { UCSR0B |= (1 << RXCIE0); }
+inline static void USART0_disableInterrupt_RX() { UCSR0B &= ~(1 << RXCIE0); }
+inline static void USART0_enaInterrupt_TX() { UCSR0B |= (1 << UDRIE0); }
+inline static void USART0_disableInterrupt_TX() { UCSR0B &= ~(1 << UDRIE0); }
 
 #endif

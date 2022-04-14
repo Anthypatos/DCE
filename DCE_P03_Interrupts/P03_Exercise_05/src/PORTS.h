@@ -35,7 +35,7 @@
 
 /**---------  FUNCTIONS -------------------------*/
 /// Pin and ports configuration function.
-static inline void configPorts(void)
+static inline void GPIO_config(void)
 {
 	/// 1) LED as output
 	GPIO_D_MODE |= (1 << GREEN_LED_PIN) | (1 << RED_LED_PIN);

@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "macros.h": "c"
+        "macros.h": "c",
+        "io.h": "c",
+        "ext_int.h": "c"
     }
 }

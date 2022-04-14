@@ -4,6 +4,7 @@
 #include <avr/io.h>
 
 /// ----------- PARAMETERS -------------
+#define F_CPU		16000000UL
 #define FOSC		16000000 				// Arduino UNO Clock frequency
 #define BAUD		9600
 #define UBRR_VALUE	((F_CPU / (16UL * BAUD)) - 1)	// Prescaler to achieve 9600bps
@@ -27,7 +28,5 @@ inline static void USART0_Init(uint16_t valueUBRR)
 	//4.-Set frame format: 8data, 1stop bit
 	UCSR0C |= (1 << UCSZ01) | (1 << UCSZ00); 
 }
-
-inline static void USART0_enaInterrupt_RX() { UCSR0B |= (1 << RXCIE0); }
 
 #endif

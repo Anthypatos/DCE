@@ -17,12 +17,6 @@
 ///MCU Port where the LED is connected. Mode Configuration register.
 #define GPIO_D_MODE		DDRD
 
-///Pin where every LED is connected.
-#define LED0_PIN		PORTD4
-#define LED1_PIN		PORTD5
-#define LED2_PIN		PORTD6
-#define LED3_PIN		PORTD7
-
 ///MCU port where the LED is connected.
 #define GPIO_D_OUT		PORTD	
 
@@ -39,10 +33,7 @@
 /// Pin and ports configuration function.
 static inline void GPIO_config(void)
 {
-	/// 1) LED as output
-	GPIO_D_MODE |= (1 << LED0_PIN) | (1 << LED1_PIN) | (1 << LED2_PIN) | (1 << LED3_PIN);
-
-	/// 2) Enable Pull-up for Pushbutton
+	/// 1) Enable Pull-up for Pushbutton
 	GPIO_D_OUT	|= (1 << BUTTON_RPULLUP);
 }
 

@@ -2,14 +2,11 @@
     @file	main.c
     @author Juan de la Cruz Caravaca Guerrero
     @date	13/04/2022
-    @brief	The state of a pushbutton is shown in a LED
+    @brief	Toggle a LED by means of PCINT interrupt.
     @par	Description:
-			The LED and the PUSHBUTTON are connected to the PORT 
-			specified in "PORTS.h". A RED_LED is switch ON/OFF 
-			by means of a push button while a GREEN_LED is always 
-			blinking. 
-			In this version, the pushbutton is connected to an 
-			external interrupt.
+			Toggle a RED LED with a pushbutton by means of pin change
+            interrupts (PCINT18).
+            The main program is blinking a GREEN LED.
 */
 
 #define F_CPU 16000000UL
@@ -29,8 +26,9 @@
 /// cleared and the main program continues.
 ISR(PCINT2_vect) 
 {
-    _delay_ms(200); // To avoid the bouncing. Not recommend.
-	if (READ_PIN(GPIO_D_IN, BUTTON_PIN) == READ_FALSE) TOGGLE(GPIO_D_OUT, RED_LED_PIN); // Toggle the RED_LED
+    //Para que solo conmute si ha cambiado de '1' a '0'
+	if (READ_PIN(GPIO_D_IN, BUTTON_PIN) == READ_FALSE) // If PIND2='0', pressed
+        TOGGLE(GPIO_D_OUT, RED_LED_PIN); // Toggle the RED_LED
 }
 
 
@@ -38,7 +36,7 @@ int main(void)
 {
     /** ------------ SETUP ----------------------------------------*/
     /// 1) Configure ports
-    configPorts();
+    GPIO_config();
 
     /// 2) Configure external interrupt
     PCINT2_enable(); // PCINT2 is enabled
@@ -50,7 +48,7 @@ int main(void)
     /** ------------ LOOP ----------------------------------------*/
     while (1)
     {
-        TOGGLE(GPIO_D_OUT, GREEN_LED_PIN);
         _delay_ms(BLINK_TIME);
-    }
-}
+        TOGGLE(GPIO_D_OUT, GREEN_LED_PIN);  // Blinking LED_GREEN
+    }   // End while (1)
+}   // End main()

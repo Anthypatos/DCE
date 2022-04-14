@@ -1,8 +1,15 @@
-#define  F_CPU	16000000UL
-#include <avr/io.h>	 			
-#include <util/delay.h>
-#include <stdio.h>
+/**
+	@file		main.c
+	@author		Juan de la Cruz Caravaca Guerrero
+	@date		14/04/2022
+    @brief		Main menu
+    @par		Description
+				Shows a menu on the screen and prints different characters.	
+*/
+
+#include <avr/io.h>	
 #include "../../../DCE_Libraries/USART.h"
+#include "../../../DCE_Libraries/MACROS.h"
 
 inline static void mainMenu();
 
@@ -15,25 +22,23 @@ int main(){
 	/// -------------  SUPER-LOOP -----------------------------------
 	while(1)	
     {	
-		if (UCSR0A & (1 << RXC0))
+		if (CHECKBIT(UCSR0A, RXC0))
 		{
 			key = UDR0;
 			
-			// 2. Answer to the choice selected
 			switch (key)
 			{
 				case 'a':
-					USART0_putString("You pressed 'a'.\n\r");
+					USART0_putString("You pressed a\n\r");
 					break;
 				case 'b':
-					USART0_putString("You pressed 'b'.\n\r");
+					USART0_putString("You pressed b\n\r");
 					break;
 				case 'h':
-				case 'H':
 					mainMenu();
 					break;
 				default:
-					USART0_putString("I don't know what to do with that key");
+					USART0_putString("I don't know what to do with that key\n\r");
 					break;
 			}
 		}
@@ -42,12 +47,12 @@ int main(){
 
 inline static void mainMenu()
 {
-	USART0_putString("\f----------------------------------------\n\r"
+	USART0_putString("\f-----------------------------------------------\n\r"
 					"This is the main menu. Select one choice:\n\r"
-					"----------------------------------------\n\r"
-					"a. Choice 'a'\n\r"
-					"b. Choice 'b'\n\r"
+					"-----------------------------------------------\n\r"
+					"a.- Choice a\n\r"
+					"b.- Choice b\n\r"
 					"\n\r"
-					"h. Show the menu again\n\r"
-					"----------------------------------------\n\r");
+					"h.- Show the menu again\n\r"
+					"-----------------------------------------------\n\r");
 }
