@@ -11,9 +11,10 @@
 #ifndef ADC_H_
 #define ADC_H_
 
-#define  F_CPU 16000000UL
+#include <stdint.h>
 #include <avr/io.h>
 #include "ADC.h"
+#include "MACROS.h"
 
 //----------------------------------------------------------------------
 uint16_t ADC_Read_Single_Poll(uint8_t channel)
@@ -31,7 +32,7 @@ uint16_t ADC_Read_Single_Poll(uint8_t channel)
 	ADCSRA |= (1 << ADSC);
 	
 	// 5. Wait the sample is read. (Polling the flag)
-	while (!(ADCSRA & (1 << ADIF)));
+	while (CHECKBIT(ADCSRA, ADIF) == READ_FALSE);
 	
 	// 6. Return the 10-bit sample read in the ADC.
 	return ADC;

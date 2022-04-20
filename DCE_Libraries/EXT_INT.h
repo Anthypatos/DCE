@@ -38,4 +38,7 @@ inline static void USART0_disableInterrupt_RX() { UCSR0B &= ~(1 << RXCIE0); }
 inline static void USART0_enaInterrupt_TX() { UCSR0B |= (1 << UDRIE0); }
 inline static void USART0_disableInterrupt_TX() { UCSR0B &= ~(1 << UDRIE0); }
 
+inline static void ADC_enaInterrupt() { ADCSRA |= (1 << ADIE); }
+inline static void ADC_disableInterrupt() { ADCSRA &= ~(1 << ADIE); }
+
 #endif
