@@ -1,0 +1,45 @@
+\hypertarget{main_8c}{}\doxysection{DCE\+\_\+\+P05\+\_\+\+ADC/\+P05\+\_\+\+Exercise\+\_\+02/src/main.c File Reference}
+\label{main_8c}\index{DCE\_P05\_ADC/P05\_Exercise\_02/src/main.c@{DCE\_P05\_ADC/P05\_Exercise\_02/src/main.c}}
+
+
+LDR.  
+
+
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$avr/interrupt.\+h$>$}\newline
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../../../\+DCE\+\_\+\+Libraries/\+ADC.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../../\+DCE\+\_\+\+Libraries/\+EXT\+\_\+\+INT.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../../\+DCE\+\_\+\+Libraries/\+MACROS.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}PORTS.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}PARAMETERS.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}\label{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}} 
+\#define {\bfseries F\+\_\+\+CPU}~16000000\+UL
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a05c2e5b588ced1cd7312f5b0edc5b295}\label{main_8c_a05c2e5b588ced1cd7312f5b0edc5b295}} 
+{\bfseries ISR} (ADC\+\_\+vect)
+\item 
+\mbox{\Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+LDR. 
+
+\begin{DoxyAuthor}{Author}
+Juan de la Cruz Caravaca Guerrero 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+20/04/2022 
+\end{DoxyDate}
+\begin{DoxyParagraph}{Description}
+Reads the value of an LDR to toggle a LED 
+\end{DoxyParagraph}

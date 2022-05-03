@@ -9,27 +9,20 @@
 
 #define F_CPU		16000000UL
 
-#define SAMPLE1		1
-#define SAMPLE2		2
-#define SAMPLE4		4
-#define SAMPLE8		8
-#define SAMPLE16	16
-
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
 #include <stdint.h>
 #include <stdlib.h>
-#include <string.h>
 #include "../../../DCE_Libraries/ADC.h"
 #include "../../../DCE_Libraries/EXT_INT.h"
 #include "../../../DCE_Libraries/USART.h"
 #include "../../../DCE_Libraries/MACROS.h"
 
-static volatile uint16_t reading = 0;
+static inline void mainMenu();
+static inline uint16_t ADC_avgRead(uint8_t channel, uint8_t samples);
 
-inline static void mainMenu();
-inline static uint16_t ADC_avgRead(uint8_t channel, uint8_t samples);
+static volatile uint16_t reading = 0;
 
 ISR(ADC_vect)
 {
@@ -39,18 +32,17 @@ ISR(ADC_vect)
 
 int main()
 {
+	// Setup
 	ADC_Init_Single(AVCC, ALIGN_RIGHT);
 	USART0_Init(UBRR_VALUE);
-	sei();
 	
-	reading = ADC_Read_Single_Poll(ADC0);
-	ADC_enaInterrupt();
+	ADC_Read(ADC0);	// First reading is slower
 	
 	mainMenu();
 	char key = ' ';
-	char strPointer[7] = "";
+	char strPointer[5] = "";
 	
-	/// -------------  SUPER-LOOP -----------------------------------
+	// Superloop
 	while(1)
 	{
 		if (CHECKBIT(UCSR0A, RXC0))
@@ -59,11 +51,13 @@ int main()
 			
 			switch (key)
 			{
-				case '1':
-					USART0_putString(strcat(utoa(ADC_avgRead(ADC0, SAMPLE4), strPointer, 10), "\n\r"));
+				case '1':	
+					USART0_putString(utoa(ADC_avgRead(ADC0, SAMPLE16), strPointer, 10));
+					USART0_putString("\n\r");
 					break;
 				case '2':
-					USART0_putString(strcat(utoa(ADC_avgRead(ADC1, SAMPLE4), strPointer, 10), "\n\r"));
+					USART0_putString(utoa(ADC_avgRead(ADC1, SAMPLE16), strPointer, 10));
+					USART0_putString("\n\r");
 					break;
 				case 'h':
 					mainMenu();
@@ -76,7 +70,7 @@ int main()
 	}
 }
 
-inline static void mainMenu()
+static inline void mainMenu()
 {
 	USART0_putString("\f-----------------------------------------------\n\r"
 	"This is the main menu. Select one choice:\n\r"
@@ -88,43 +82,23 @@ inline static void mainMenu()
 	"-----------------------------------------------\n\r");
 }
 
-inline static uint16_t ADC_avgRead(uint8_t channel, uint8_t samples)
+static inline uint16_t ADC_avgRead(uint8_t channel, uint8_t samples)
 {
 	reading = 0;
 	
 	for (uint8_t i = 0; i < samples; i++)
 	{
-		// 1. Clear the flag asserted in a previous readout
-		ADCSRA |= (1 << ADIF);
-		
-		// 2. Clear the channel to set a new one
-		ADMUX &= ~((1 << MUX3) | (1 << MUX2) | (1 << MUX1) | (1 << MUX0));
-		
-		// 3. Set the channel
-		ADMUX |= channel;
-		
-		// 4. Start a conversion for the selected channel
-		ADCSRA |= (1 << ADSC);
-		
+		ADC_Read(channel);
 		_delay_ms(500);
 	}
 	
 	switch(samples)
 	{
-		case SAMPLE2:
-			reading >>= 1;
-			break;
-		case SAMPLE4:
-			reading >>= 2;
-			break;
-		case SAMPLE8:
-			reading >>= 3;
-			break;
-		case SAMPLE16:
-			reading >>= 4;
-			break;
-		default:
-			break;
+		case SAMPLE2: reading >>= 1; break;
+		case SAMPLE4: reading >>= 2; break;
+		case SAMPLE8: reading >>= 3; break;
+		case SAMPLE16: reading >>= 4; break;
+		default: break;
 	}
 	
 	return reading;

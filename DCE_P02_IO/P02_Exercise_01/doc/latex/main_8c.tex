@@ -1,0 +1,55 @@
+\hypertarget{main_8c}{}\doxysection{DCE\+\_\+\+P02\+\_\+\+IO/\+P02\+\_\+\+Exercise\+\_\+01/src/main.c File Reference}
+\label{main_8c}\index{DCE\_P02\_IO/P02\_Exercise\_01/src/main.c@{DCE\_P02\_IO/P02\_Exercise\_01/src/main.c}}
+
+
+Blinking the LED connected to pin 3 (Arduino).  
+
+
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}\label{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}} 
+\#define {\bfseries F\+\_\+\+CPU}~16000000\+UL
+\begin{DoxyCompactList}\small\item\em Define CPU frequency as 16 MHz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Blinking the LED connected to pin 3 (Arduino). 
+
+\begin{DoxyAuthor}{Author}
+Juan de la Cruz Caravaca Guerrero 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+28/03/2022 
+\end{DoxyDate}
+\begin{DoxyParagraph}{Description }
+Pin 3 in Arduino is connected to pin 3 in PORTD. This information can be got from the picture showing Arduino UNO \texorpdfstring{$<$}{<}-\/-\/\texorpdfstring{$>$}{>} Atmega328p 
+\end{DoxyParagraph}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+-\/-\/-\/-\/-\/-\/-\/-\/-\/--- SETUP -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---
+
+1) Set pin 3 in PORTD as output pin
+
+-\/-\/-\/-\/-\/-\/-\/-\/-\/--- LOOP -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- \hypertarget{main.c_autotoc_md0}{}\doxysubsubsection{For blinking LED}\label{main.c_autotoc_md0}
+1) LED OFF by clearing the pin PD3
+
+2) Delay of 500 milli-\/seconds
+
+3) LED ON by setting the pin PD3
+
+4) Delay of 500 milli-\/seconds

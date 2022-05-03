@@ -1,0 +1,33 @@
+\hypertarget{_m_a_c_r_o_s_8h_source}{}\doxysection{MACROS.\+h}
+\label{_m_a_c_r_o_s_8h_source}\index{DCE\_P02\_IO/P02\_Exercise\_05/src/MACROS.h@{DCE\_P02\_IO/P02\_Exercise\_05/src/MACROS.h}}
+\mbox{\hyperlink{_m_a_c_r_o_s_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef MACROS\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define MACROS\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{/********************************************************/}}
+\DoxyCodeLine{13 \textcolor{comment}{/*          MACROS DEFINE                               */}}
+\DoxyCodeLine{14 \textcolor{comment}{/* (AVR035: Efficient C Coding for AVR)                 */}}
+\DoxyCodeLine{15 \textcolor{comment}{/********************************************************/}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{// Set and clear bits in I/O registers declared as macros }}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define SETBIT(ADDRESS, BIT)        (ADDRESS |= (1 << BIT))}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define CLEARBIT(ADDRESS, BIT)  (ADDRESS \&= \string~(1 << BIT))}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{// Macro for testing of a single bit in an I/O location}}
+\DoxyCodeLine{22 \textcolor{comment}{// Return 0 (false) while the flag is not asserted}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define CHECKBIT(ADDRESS, BIT)  (ADDRESS \& (1 << BIT))}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define TOGGLE(ADDRESS, BIT)        (ADDRESS \string^= (1 << BIT))}}
+\DoxyCodeLine{26 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define IS\_PIN\_ZERO(ADDRESS, BIT)   !(ADDRESS \& (1 << BIT)) }\textcolor{comment}{// Flag=0 -\/-\/> TRUE}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define READ\_PIN(ADDRESS, BIT)      (ADDRESS \& (1 << BIT))  }\textcolor{comment}{// Check the button state}}
+\DoxyCodeLine{30                                 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define BUTTON\_PRESSED              0}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define BUTTON\_NOT\_PRESSED          1}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* PORTS\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

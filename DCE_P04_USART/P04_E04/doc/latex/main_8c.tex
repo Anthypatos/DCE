@@ -1,0 +1,56 @@
+\hypertarget{main_8c}{}\doxysection{DCE\+\_\+\+P04\+\_\+\+USART/\+P04\+\_\+\+E04/src/main.c File Reference}
+\label{main_8c}\index{DCE\_P04\_USART/P04\_E04/src/main.c@{DCE\_P04\_USART/P04\_E04/src/main.c}}
+
+
+USART and INT0.  
+
+
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$avr/interrupt.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}PORTS.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}..\textbackslash{}..\textbackslash{}..\textbackslash{}\+DCE\+\_\+\+Libraries\textbackslash{}\+EXT\+\_\+\+INT.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}..\textbackslash{}..\textbackslash{}..\textbackslash{}\+DCE\+\_\+\+Libraries\textbackslash{}\+USART.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}..\textbackslash{}..\textbackslash{}..\textbackslash{}\+DCE\+\_\+\+Libraries\textbackslash{}\+MACROS.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_afea150fcd685610cb9f7672fce361e53}\label{main_8c_afea150fcd685610cb9f7672fce361e53}} 
+{\bfseries ISR} (INT0\+\_\+vect)
+\begin{DoxyCompactList}\small\item\em -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- ISR functions -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{main_8c_a09ce999e15ad60b8a3f07d08af1946f9}\label{main_8c_a09ce999e15ad60b8a3f07d08af1946f9}} 
+{\bfseries ISR} (USART\+\_\+\+RX\+\_\+vect)
+\item 
+int \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+USART and INT0. 
+
+\begin{DoxyAuthor}{Author}
+Mirian Cifredo 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+15/03/2022 
+\end{DoxyDate}
+\begin{DoxyParagraph}{Description }
+a) Every time a pushbutton is pressed (bouncing is ignored), show onto the screen the following ASCII char in a range from 0x20 to 0x7E. (Tx polling -\/ INT0 interrupt) b) Show on 4 LED the ASCII equivalent to a key hit on the keyboard. (Rx Interrupts) 
+\end{DoxyParagraph}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- SETUP -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---
+\begin{DoxyEnumerate}
+\item Config ports (4 LED and pushbutton -\/ \char`\"{}\+PORTS.\+h\char`\"{})
+\item External interrupt setup (INT0 -\/ Pushbutton)
+\item USART setup (9600 8N1 -\/ Keyboard)
+\item Enable global interrupts
+\end{DoxyEnumerate}
+
+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- SUPER-\/\+LOOP -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---

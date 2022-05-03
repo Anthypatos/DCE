@@ -1,3 +1,10 @@
+/**
+	@file		ADC.h
+	@author		Juan de la Cruz Caravaca Guerrero
+	@date		11/04/2022
+    @brief		Functions to configure the GPIOs
+*/
+
 #define F_CPU	16000000UL
 
 #include <stdint.h>

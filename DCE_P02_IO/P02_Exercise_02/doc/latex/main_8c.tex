@@ -1,0 +1,53 @@
+\hypertarget{main_8c}{}\doxysection{DCE\+\_\+\+P02\+\_\+\+IO/\+P02\+\_\+\+Exercise\+\_\+02/src/main.c File Reference}
+\label{main_8c}\index{DCE\_P02\_IO/P02\_Exercise\_02/src/main.c@{DCE\_P02\_IO/P02\_Exercise\_02/src/main.c}}
+
+
+Turning on the LEDs according to binary numbers.  
+
+
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}PORTS.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}PARAMETERS.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}\label{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}} 
+\#define {\bfseries F\+\_\+\+CPU}~16000000\+UL
+\begin{DoxyCompactList}\small\item\em Define CPU frequency as 16 MHz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Turning on the LEDs according to binary numbers. 
+
+\begin{DoxyAuthor}{Author}
+Juan de la Cruz Caravaca Guerrero 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+28/03/2022 
+\end{DoxyDate}
+\begin{DoxyParagraph}{Description }
+Sending to the LEDs the binary values equivalent to the range 0-\/F. 
+\end{DoxyParagraph}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+-\/-\/-\/-\/-\/-\/-\/-\/-\/--- SETUP -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---
+
+1) Set pins 2, 3, 4, 5, 7 in PORTD as output pin
+
+-\/-\/-\/-\/-\/-\/-\/-\/-\/--- LOOP -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- \hypertarget{main.c_autotoc_md0}{}\doxysubsubsection{For blinking LED}\label{main.c_autotoc_md0}
+1) LED ON or OFF by setting the pins PD2, PD3, PD4, PD5
+
+3) Delay of 500 milli-\/seconds

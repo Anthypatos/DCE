@@ -1,0 +1,55 @@
+\hypertarget{_b_u_t_t_o_n___l_e_d_8c}{}\doxysection{DCE\+\_\+\+P02\+\_\+\+IO/\+P02\+\_\+\+Exercise\+\_\+03/src/\+BUTTON\+\_\+\+LED.c File Reference}
+\label{_b_u_t_t_o_n___l_e_d_8c}\index{DCE\_P02\_IO/P02\_Exercise\_03/src/BUTTON\_LED.c@{DCE\_P02\_IO/P02\_Exercise\_03/src/BUTTON\_LED.c}}
+
+
+The state of a pushbutton is shown in a LED.  
+
+
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}PORTS.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_b_u_t_t_o_n___l_e_d_8c_a43bafb28b29491ec7f871319b5a3b2f8}\label{_b_u_t_t_o_n___l_e_d_8c_a43bafb28b29491ec7f871319b5a3b2f8}} 
+\#define {\bfseries F\+\_\+\+CPU}~16000000\+UL
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_b_u_t_t_o_n___l_e_d_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The state of a pushbutton is shown in a LED. 
+
+\begin{DoxyAuthor}{Author}
+Mirian Cifredo 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+10/02/2022 
+\end{DoxyDate}
+\begin{DoxyParagraph}{Description\+:}
+The LED and the PUSHBUTTON is connected to the PORT specified in \char`\"{}\+PORTs.\+h\char`\"{} 
+\end{DoxyParagraph}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_b_u_t_t_o_n___l_e_d_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{_b_u_t_t_o_n___l_e_d_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{BUTTON\_LED.c@{BUTTON\_LED.c}!main@{main}}
+\index{main@{main}!BUTTON\_LED.c@{BUTTON\_LED.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+-\/-\/-\/-\/-\/-\/-\/-\/-\/--- SETUP -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---
+
+1) Set LED pin as output. PUSHBUTTON LED is input by default.
+
+2) Enable pull-\/up for the PUSHBUTTON
+
+-\/-\/-\/-\/-\/-\/-\/-\/-\/--- LOOP -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- Read the state of the pushbutton and shows it onto a LED. Keep in mind that the read value when the PUSHBUTTON \hypertarget{BUTTON_LED.c_autotoc_md0}{}\doxysubsubsection{is released is \textquotesingle{}1\textquotesingle{} due to the pull-\/up resistor.}\label{BUTTON_LED.c_autotoc_md0}
+1) Read pushbutton 2) If PUSHBUTTON is pressed
+
+Switch ON LED
+
+3) else switch OFF LED

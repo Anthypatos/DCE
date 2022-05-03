@@ -1,0 +1,38 @@
+\hypertarget{_p_o_r_t_s_8h_source}{}\doxysection{PORTS.\+h}
+\label{_p_o_r_t_s_8h_source}\index{DCE\_P04\_USART/P04\_E07/src/PORTS.h@{DCE\_P04\_USART/P04\_E07/src/PORTS.h}}
+\mbox{\hyperlink{_p_o_r_t_s_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#ifndef PORTS\_H\_}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define PORTS\_H\_}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <avr/io.h>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define GPIO\_B\_MODE     DDRB}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define LED0\_PIN        PORTB0}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define LED1\_PIN        PORTB1}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define LED2\_PIN        PORTB2}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define LED3\_PIN        PORTB3}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define GPIO\_B\_OUT      PORTB}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define GPIO\_D\_OUT      PORTD   }}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define GPIO\_D\_IN       PIND}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define BUTTON0\_PIN     PIND2}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define BUTTON1\_PIN     PIND3}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define BUTTON0\_RPULLUP PORTD2}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define BUTTON1\_RPULLUP PORTD3}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{43 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} GPIO\_config(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{44 \{}
+\DoxyCodeLine{46     \mbox{\hyperlink{_p_o_r_t_s_8h_a8eaf2c4034d6bf9c854d1527eebcb1c8}{GPIO\_B\_MODE}} |= (1 << \mbox{\hyperlink{_p_o_r_t_s_8h_a3fc522fda449d6edde717d6a857429cf}{LED0\_PIN}}) | (1 << LED1\_PIN) | (1 << LED2\_PIN) | (1 << LED3\_PIN);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{49     GPIO\_D\_OUT |= (1 << \mbox{\hyperlink{_p_o_r_t_s_8h_a9cde4ed8d87f18b1cbe4976ee8c88920}{BUTTON0\_RPULLUP}}) | (1 << BUTTON1\_RPULLUP);}
+\DoxyCodeLine{50 \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* PORTS\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

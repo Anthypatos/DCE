@@ -1,0 +1,72 @@
+\hypertarget{main__no_blocking_8c}{}\doxysection{DCE\+\_\+\+P02\+\_\+\+IO/\+P02\+\_\+\+Exercise\+\_\+05/src/main\+\_\+no\+Blocking.c File Reference}
+\label{main__no_blocking_8c}\index{DCE\_P02\_IO/P02\_Exercise\_05/src/main\_noBlocking.c@{DCE\_P02\_IO/P02\_Exercise\_05/src/main\_noBlocking.c}}
+
+
+Toggle a LED by means a pushbutton.  
+
+
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}PORTS.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}PARAMETERS.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}MACROS.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main__no_blocking_8c_a43bafb28b29491ec7f871319b5a3b2f8}\label{main__no_blocking_8c_a43bafb28b29491ec7f871319b5a3b2f8}} 
+\#define {\bfseries F\+\_\+\+CPU}~16000000\+UL
+\begin{DoxyCompactList}\small\item\em Define CPU frequency as 16 MHz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main__no_blocking_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Toggle a LED by means a pushbutton. 
+
+\begin{DoxyAuthor}{Author}
+Mirian Cifredo 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+10/02/2022 
+\end{DoxyDate}
+\begin{DoxyParagraph}{Description }
+Allow toggle a LED every time a pushbutton is pressed. In order to avoid a bouncing in the pushbutton, the system waits for a time until the state of the pushbutton is stable. This version is more imprecise and many reading can be done while the button keeps pressed.
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+Mirian Cifredo 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+10/02/2022 
+\end{DoxyDate}
+\begin{DoxyParagraph}{Description }
+Allow toggle a LED every time a pushbutton is pressed. In order to avoid a bouncing in the pushbutton, the system waits for a time until the state of the pushbutton is stable. 
+\end{DoxyParagraph}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main__no_blocking_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main__no_blocking_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main\_noBlocking.c@{main\_noBlocking.c}!main@{main}}
+\index{main@{main}!main\_noBlocking.c@{main\_noBlocking.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+-\/-\/-\/-\/-\/-\/-\/-\/-\/--- SETUP -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---
+
+1) Set pin as output
+
+2) Enable pull-\/up for the PUSHBUTTON
+
+-\/-\/-\/-\/-\/-\/-\/-\/-\/--- LOOP -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---
+
+1) If the pushbutton is pressed
+
+
+\begin{DoxyItemize}
+\item Wait for a time to avoid bouncing in pushbutton
+\item Check if the button keeps pressed
+\end{DoxyItemize}
+
+2) If so, the LED changes the state

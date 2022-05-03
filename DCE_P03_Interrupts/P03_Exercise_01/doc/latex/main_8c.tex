@@ -1,0 +1,62 @@
+\hypertarget{main_8c}{}\doxysection{DCE\+\_\+\+P03\+\_\+\+Interrupts/\+P03\+\_\+\+Exercise\+\_\+01/src/main.c File Reference}
+\label{main_8c}\index{DCE\_P03\_Interrupts/P03\_Exercise\_01/src/main.c@{DCE\_P03\_Interrupts/P03\_Exercise\_01/src/main.c}}
+
+
+The state of a pushbutton is shown in a LED.  
+
+
+{\ttfamily \#include $<$avr/interrupt.\+h$>$}\newline
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}PORTS.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}..\textbackslash{}..\textbackslash{}..\textbackslash{}\+DCE\+\_\+\+Libraries\textbackslash{}\+MACROS.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}\label{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}} 
+\#define {\bfseries F\+\_\+\+CPU}~16000000\+UL
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{main_8c_afea150fcd685610cb9f7672fce361e53}{ISR}} (INT0\+\_\+vect)
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The state of a pushbutton is shown in a LED. 
+
+\begin{DoxyAuthor}{Author}
+Mirian Cifredo 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+07/03/2022 
+\end{DoxyDate}
+\begin{DoxyParagraph}{Description\+:}
+The LED and the PUSHBUTTON are connected to the PORT specified in \char`\"{}\+PORTs.\+h\char`\"{}. A RED\+\_\+\+LED is switch ON/\+OFF by means a push button while a GREEN\+\_\+\+LED is always blinking. In this version, the pushbutton is connected to an external interrupt. 
+\end{DoxyParagraph}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_afea150fcd685610cb9f7672fce361e53}\label{main_8c_afea150fcd685610cb9f7672fce361e53}} 
+\index{main.c@{main.c}!ISR@{ISR}}
+\index{ISR@{ISR}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{ISR()}{ISR()}}
+{\footnotesize\ttfamily ISR (\begin{DoxyParamCaption}\item[{INT0\+\_\+vect}]{ }\end{DoxyParamCaption})}
+
+-\/-\/-\/-\/-\/--- Interrupt Service Routines -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- If INT0 interrupt is enabled, each time the pushbutton is pressed, the int interrupt is triggered. Then all the actions written into the ISR are executed. When it finishes, the flag is cleared and the main program continues. \mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+-\/-\/-\/-\/-\/-\/-\/-\/-\/--- SETUP -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---
+
+1) Configure ports
+
+2) Configure external interrupt
+
+3) Enable global interrupts
+
+-\/-\/-\/-\/-\/-\/-\/-\/-\/--- LOOP -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---

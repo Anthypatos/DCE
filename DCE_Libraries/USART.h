@@ -1,3 +1,10 @@
+/**
+	@file		USART.h
+	@author		Juan de la Cruz Caravaca Guerrero
+	@date		14/04/2022
+    @brief		Header file including functions to configure the USART.
+*/
+
 #ifndef USART_H_
 #define USART_H_
 

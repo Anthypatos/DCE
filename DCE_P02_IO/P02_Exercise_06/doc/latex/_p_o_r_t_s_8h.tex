@@ -1,0 +1,42 @@
+\hypertarget{_p_o_r_t_s_8h}{}\doxysection{DCE\+\_\+\+P02\+\_\+\+IO/\+P02\+\_\+\+Exercise\+\_\+06/src/\+PORTS.h File Reference}
+\label{_p_o_r_t_s_8h}\index{DCE\_P02\_IO/P02\_Exercise\_06/src/PORTS.h@{DCE\_P02\_IO/P02\_Exercise\_06/src/PORTS.h}}
+
+
+Header file describing the name of the ports for this project.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_p_o_r_t_s_8h_a1dac899c43bdc698773f0453c015d5c5}\label{_p_o_r_t_s_8h_a1dac899c43bdc698773f0453c015d5c5}} 
+\#define {\bfseries GPIO\+\_\+\+D\+\_\+\+MODE}~DDRD
+\begin{DoxyCompactList}\small\item\em MCU Port where the LED is connected. Mode Configuration register. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_p_o_r_t_s_8h_ab4553be4db9860d940f81d7447173b2f}\label{_p_o_r_t_s_8h_ab4553be4db9860d940f81d7447173b2f}} 
+\#define {\bfseries LED\+\_\+\+PIN}~PORTD3
+\begin{DoxyCompactList}\small\item\em Pin where every LED is connected. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_p_o_r_t_s_8h_a855024b1db5df62c5df6f6b41f0e7e98}\label{_p_o_r_t_s_8h_a855024b1db5df62c5df6f6b41f0e7e98}} 
+\#define {\bfseries GPIO\+\_\+\+D\+\_\+\+OUT}~PORTD
+\begin{DoxyCompactList}\small\item\em MCU port where the LED is connected. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_p_o_r_t_s_8h_a28d93b9d5a95b2d8efc7115aef776643}\label{_p_o_r_t_s_8h_a28d93b9d5a95b2d8efc7115aef776643}} 
+\#define {\bfseries GPIO\+\_\+\+D\+\_\+\+IN}~PIND
+\begin{DoxyCompactList}\small\item\em MCU port where the PUSHBUTTON is connected. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_p_o_r_t_s_8h_abc2ad14f0789907024ac765711ffd3da}\label{_p_o_r_t_s_8h_abc2ad14f0789907024ac765711ffd3da}} 
+\#define {\bfseries BUTTON\+\_\+\+PIN}~PIND2
+\begin{DoxyCompactList}\small\item\em Pin where the BUTTON is connected. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_p_o_r_t_s_8h_abaa02416474c028b64e9e2c9ce9d72a8}\label{_p_o_r_t_s_8h_abaa02416474c028b64e9e2c9ce9d72a8}} 
+\#define {\bfseries BUTTON\+\_\+\+RPULLUP}~PORTD2
+\begin{DoxyCompactList}\small\item\em Pull-\/up for PUSHBUTTON. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file describing the name of the ports for this project. 
+
+\begin{DoxyAuthor}{Author}
+Mirian Cifredo 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+23/12/2021 
+\end{DoxyDate}
+\begin{DoxyParagraph}{Description }
+Allows to easily modify the pin with the LED connected. For other MCU only this header file will need be modified. 
+\end{DoxyParagraph}

@@ -1,3 +1,10 @@
+/**
+	@file		USART.c
+	@author		Juan de la Cruz Caravaca Guerrero
+	@date		14/04/2022
+    @brief		Functions to configure the USART
+*/
+
 #define  F_CPU	16000000UL
 #include <avr/io.h>	 			
 #include <util/delay.h>

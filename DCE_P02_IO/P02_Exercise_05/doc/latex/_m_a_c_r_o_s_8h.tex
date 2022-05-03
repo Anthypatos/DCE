@@ -1,0 +1,45 @@
+\hypertarget{_m_a_c_r_o_s_8h}{}\doxysection{DCE\+\_\+\+P02\+\_\+\+IO/\+P02\+\_\+\+Exercise\+\_\+05/src/\+MACROS.h File Reference}
+\label{_m_a_c_r_o_s_8h}\index{DCE\_P02\_IO/P02\_Exercise\_05/src/MACROS.h@{DCE\_P02\_IO/P02\_Exercise\_05/src/MACROS.h}}
+
+
+Header file describing macros for AVR C.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_m_a_c_r_o_s_8h_a0724532369ee5d568fd4f5e96abafb55}\label{_m_a_c_r_o_s_8h_a0724532369ee5d568fd4f5e96abafb55}} 
+\#define {\bfseries SETBIT}(ADDRESS,  BIT)~(ADDRESS $\vert$= (1 $<$$<$ BIT))
+\item 
+\mbox{\Hypertarget{_m_a_c_r_o_s_8h_a9ba4c5862e2e97b55ede827cc970f3fe}\label{_m_a_c_r_o_s_8h_a9ba4c5862e2e97b55ede827cc970f3fe}} 
+\#define {\bfseries CLEARBIT}(ADDRESS,  BIT)~(ADDRESS \&= $\sim$(1 $<$$<$ BIT))
+\item 
+\mbox{\Hypertarget{_m_a_c_r_o_s_8h_a1277abbecdb0df171c6e1df4ae3811ab}\label{_m_a_c_r_o_s_8h_a1277abbecdb0df171c6e1df4ae3811ab}} 
+\#define {\bfseries CHECKBIT}(ADDRESS,  BIT)~(ADDRESS \& (1 $<$$<$ BIT))
+\item 
+\mbox{\Hypertarget{_m_a_c_r_o_s_8h_af180210047c3e2b6801e698d3708da49}\label{_m_a_c_r_o_s_8h_af180210047c3e2b6801e698d3708da49}} 
+\#define {\bfseries TOGGLE}(ADDRESS,  BIT)~(ADDRESS $^\wedge$= (1 $<$$<$ BIT))
+\item 
+\mbox{\Hypertarget{_m_a_c_r_o_s_8h_a437074e4a2b859b597aee1001b2eae51}\label{_m_a_c_r_o_s_8h_a437074e4a2b859b597aee1001b2eae51}} 
+\#define {\bfseries IS\+\_\+\+PIN\+\_\+\+ZERO}(ADDRESS,  BIT)~!(ADDRESS \& (1 $<$$<$ BIT))
+\item 
+\mbox{\Hypertarget{_m_a_c_r_o_s_8h_acde6390386ab0a22ed2ef6a58a04af69}\label{_m_a_c_r_o_s_8h_acde6390386ab0a22ed2ef6a58a04af69}} 
+\#define {\bfseries READ\+\_\+\+PIN}(ADDRESS,  BIT)~(ADDRESS \& (1 $<$$<$ BIT))
+\item 
+\mbox{\Hypertarget{_m_a_c_r_o_s_8h_a666f4a9872b7185170dd9318ceff91c6}\label{_m_a_c_r_o_s_8h_a666f4a9872b7185170dd9318ceff91c6}} 
+\#define {\bfseries BUTTON\+\_\+\+PRESSED}~0
+\item 
+\mbox{\Hypertarget{_m_a_c_r_o_s_8h_ae1950c1e5cd4afed0d586c325276d809}\label{_m_a_c_r_o_s_8h_ae1950c1e5cd4afed0d586c325276d809}} 
+\#define {\bfseries BUTTON\+\_\+\+NOT\+\_\+\+PRESSED}~1
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file describing macros for AVR C. 
+
+\begin{DoxyAuthor}{Author}
+Mirian Cifredo 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+27/02/2022 
+\end{DoxyDate}

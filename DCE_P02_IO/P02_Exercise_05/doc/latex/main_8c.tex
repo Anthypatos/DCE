@@ -1,0 +1,63 @@
+\hypertarget{main_8c}{}\doxysection{DCE\+\_\+\+P02\+\_\+\+IO/\+P02\+\_\+\+Exercise\+\_\+05/src/main.c File Reference}
+\label{main_8c}\index{DCE\_P02\_IO/P02\_Exercise\_05/src/main.c@{DCE\_P02\_IO/P02\_Exercise\_05/src/main.c}}
+
+
+Toggle a LED by means a pushbutton.  
+
+
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}PORTS.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}PARAMETERS.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}MACROS.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}\label{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}} 
+\#define {\bfseries F\+\_\+\+CPU}~16000000\+UL
+\begin{DoxyCompactList}\small\item\em Define CPU frequency as 16 MHz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Toggle a LED by means a pushbutton. 
+
+\begin{DoxyAuthor}{Author}
+Mirian Cifredo 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+10/02/2022 
+\end{DoxyDate}
+\begin{DoxyParagraph}{Description }
+Allow toggle a LED every time a pushbutton is pressed. In order to avoid a bouncing in the pushbutton, the system waits for a time until the state of the pushbutton is stable. 
+\end{DoxyParagraph}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+-\/-\/-\/-\/-\/-\/-\/-\/-\/--- SETUP -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---
+
+1) Set pin as output
+
+2) Enable pull-\/up for the PUSHBUTTON
+
+-\/-\/-\/-\/-\/-\/-\/-\/-\/--- LOOP -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---
+
+1) If the pushbutton is pressed
+
+
+\begin{DoxyItemize}
+\item Wait for a time to avoid bouncing in pushbutton
+\item Wait while button keeps pressed
+\end{DoxyItemize}
+
+2) When the pushbutton is released, does the task\+: change the state of the LED

@@ -1,0 +1,30 @@
+\hypertarget{_p_o_r_t_s_8h_source}{}\doxysection{PORTS.\+h}
+\label{_p_o_r_t_s_8h_source}\index{DCE\_P02\_IO/P02\_Exercise\_07/src/PORTS.h@{DCE\_P02\_IO/P02\_Exercise\_07/src/PORTS.h}}
+\mbox{\hyperlink{_p_o_r_t_s_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#ifndef PORTS\_H\_}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define PORTS\_H\_}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define GPIO\_D\_MODE     DDRD}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define LED\_PIN         PORTD3}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define GPIO\_D\_OUT      PORTD   }}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define GPIO\_D\_IN       PIND}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define BUTTON\_PIN      PIND2}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define BUTTON\_RPULLUP  PORTD2}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{35 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} configPorts(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{38     \mbox{\hyperlink{_p_o_r_t_s_8h_a1dac899c43bdc698773f0453c015d5c5}{GPIO\_D\_MODE}} |= (1 << \mbox{\hyperlink{_p_o_r_t_s_8h_ab4553be4db9860d940f81d7447173b2f}{LED\_PIN}});}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{41     \mbox{\hyperlink{_p_o_r_t_s_8h_a855024b1db5df62c5df6f6b41f0e7e98}{GPIO\_D\_OUT}}    |= (1 << \mbox{\hyperlink{_p_o_r_t_s_8h_abaa02416474c028b64e9e2c9ce9d72a8}{BUTTON\_RPULLUP}});}
+\DoxyCodeLine{42 \}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* PORTS\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

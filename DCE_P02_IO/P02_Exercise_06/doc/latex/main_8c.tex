@@ -1,0 +1,76 @@
+\hypertarget{main_8c}{}\doxysection{DCE\+\_\+\+P02\+\_\+\+IO/\+P02\+\_\+\+Exercise\+\_\+06/src/main.c File Reference}
+\label{main_8c}\index{DCE\_P02\_IO/P02\_Exercise\_06/src/main.c@{DCE\_P02\_IO/P02\_Exercise\_06/src/main.c}}
+
+
+The state of a LED is changed by means of a push button.  
+
+
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}PORTS.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}PARAMETERS.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../../\+DCE\+\_\+\+VARIOS/\+MACROS.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}\label{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}} 
+\#define {\bfseries F\+\_\+\+CPU}~16000000\+UL
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_ae2946618e700f814e6147195c808f4c8}\label{main_8c_ae2946618e700f814e6147195c808f4c8}} 
+enum {\bfseries State\+\_\+t} \{ {\bfseries STATE\+\_\+\+START}
+, {\bfseries STATE\+\_\+\+TIMER}
+, {\bfseries STATE\+\_\+\+RELEASE}
+, {\bfseries STATE\+\_\+\+DEBOUNCED}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The state of a LED is changed by means of a push button. 
+
+\begin{DoxyAuthor}{Author}
+Mirian Cifredo 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+10/02/2022 
+\end{DoxyDate}
+\begin{DoxyParagraph}{Description\+:}
+A LED is toggled by means of a debounced pushbutton by using a FSM. Only the bouncing when pushing the button is taken into account. ~\newline
+ 
+\end{DoxyParagraph}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+-\/-\/-\/-\/-\/-\/--- Local variables (Registers) -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---
+
+Variables to keep the state of the FSM
+
+Variable to read the button and store as TRUE/\+FALSE
+
+-\/-\/-\/-\/-\/-\/-\/-\/-\/--- SETUP-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---
+
+1) Ports are configured.
+
+-\/-\/-\/-\/-\/-\/-\/--- SUPERLOOP (FSM) -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---
+
+
+\begin{DoxyEnumerate}
+\item Check the EVENT in each iteration
+\item Set the TRANSITIONS based upon events
+\item Set the OUTPUTS in every state. Nothing to do in any state but the \char`\"{}\+STATE\+\_\+\+DEBOUNCED\char`\"{} one.
+\end{DoxyEnumerate}

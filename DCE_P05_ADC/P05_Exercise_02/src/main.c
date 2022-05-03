@@ -2,8 +2,9 @@
 	@file		main.c
 	@author		Juan de la Cruz Caravaca Guerrero
 	@date		20/04/2022
-    @brief		
-    @par		Description 
+    @brief		LDR
+    @par		Description
+				Reads the value of an LDR to toggle a LED
 				
 */
 
@@ -29,27 +30,21 @@ ISR(ADC_vect)
 
 int main()
 {
+	// Setup
 	GPIO_config();
 	ADC_Init_Single(AVCC, ALIGN_RIGHT);
 	sei();
-	
-	reading = ADC_Read_Single_Poll(ADC0);
 	ADC_enaInterrupt();
+
+	ADC_Read(ADC0);	// First reading is slower
 	
+	// Superloop
 	while(1)
 	{
-		// 1. Clear the flag asserted in a previous readout
-		ADCSRA |= (1 << ADIF);
+		// Reads the value
+		ADC_Read(ADC0);
 		
-		// 2. Clear the channel to set a new one
-		ADMUX &= ~((1 << MUX3) | (1 << MUX2) | (1 << MUX1) | (1 << MUX0));
-		
-		// 3. Set the channel
-		ADMUX |= ADC0;
-		
-		// 4. Start a conversion for the selected channel
-		ADCSRA |= (1 << ADSC);
-		
+		// Toggles the LED accordingly
 		if (reading < SETPOINT) GPIO_B_OUT = (1 << LED0_PIN);
 		else GPIO_B_OUT = 0x00;
 		

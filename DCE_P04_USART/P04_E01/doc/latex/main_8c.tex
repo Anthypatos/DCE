@@ -1,0 +1,61 @@
+\hypertarget{main_8c}{}\doxysection{DCE\+\_\+\+P04\+\_\+\+USART/\+P04\+\_\+\+E01/src/main.c File Reference}
+\label{main_8c}\index{DCE\_P04\_USART/P04\_E01/src/main.c@{DCE\_P04\_USART/P04\_E01/src/main.c}}
+
+
+\char`\"{}\+Hello world\char`\"{}  
+
+
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}\label{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}} 
+\#define {\bfseries F\+\_\+\+CPU}~16000000\+UL
+\item 
+\mbox{\Hypertarget{main_8c_a802b2b582b121e4632aa9a491d503720}\label{main_8c_a802b2b582b121e4632aa9a491d503720}} 
+\#define {\bfseries FOSC}~16000000
+\item 
+\mbox{\Hypertarget{main_8c_a62634036639f88eece6fbf226b45f84b}\label{main_8c_a62634036639f88eece6fbf226b45f84b}} 
+\#define {\bfseries BAUD}~9600
+\item 
+\mbox{\Hypertarget{main_8c_a0b029ff580b042a27aaac4bd2ec925e2}\label{main_8c_a0b029ff580b042a27aaac4bd2ec925e2}} 
+\#define {\bfseries UBRR\+\_\+\+VALUE}~((F\+\_\+\+CPU / (16UL $\ast$ BAUD)) -\/ 1)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a60d6297cf41fd6bca2b1449f89058996}\label{main_8c_a60d6297cf41fd6bca2b1449f89058996}} 
+void {\bfseries USART0\+\_\+putchar} (unsigned char data)
+\item 
+\mbox{\Hypertarget{main_8c_abf948fe1e225048acacb6834e974abc5}\label{main_8c_abf948fe1e225048acacb6834e974abc5}} 
+void {\bfseries USART0\+\_\+put\+String} (char $\ast$str\+Pointer)
+\item 
+int \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\char`\"{}\+Hello world\char`\"{} 
+
+\begin{DoxyAuthor}{Author}
+Mirian Cifredo 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+13/03/2022 
+\end{DoxyDate}
+\begin{DoxyParagraph}{Description }
+Send the message \char`\"{}\+Hello world\char`\"{} through the USART by using the polling technique. 9600 8N1 is the configuration. 
+\end{DoxyParagraph}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- SETUP -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---
+
+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- SUPER-\/\+LOOP -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---

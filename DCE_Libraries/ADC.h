@@ -34,8 +34,15 @@
 #define ADC9		9
 #define ADC10		10
 
+#define SAMPLE1		1
+#define SAMPLE2		2
+#define SAMPLE4		4
+#define SAMPLE8		8
+#define SAMPLE16	16
+
 //--------------- PROTOTYPES ---------------------------------------
 uint16_t ADC_Read_Single_Poll(uint8_t channel);
+void ADC_Read();
 
 
 //---------------- FUNCTIONS -----------------------------------------

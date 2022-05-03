@@ -1,0 +1,73 @@
+\hypertarget{main_8c}{}\doxysection{DCE\+\_\+\+P02\+\_\+\+IO/\+P02\+\_\+\+Exercise\+\_\+08/src/main.c File Reference}
+\label{main_8c}\index{DCE\_P02\_IO/P02\_Exercise\_08/src/main.c@{DCE\_P02\_IO/P02\_Exercise\_08/src/main.c}}
+
+
+The state of a LED is changed by means of a push button.  
+
+
+{\ttfamily \#include $<$util/delay.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}PORTS.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../../\+DCE\+\_\+\+Libraries/\+MACROS.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../../\+DCE\+\_\+\+Libraries/functions\+GPIO.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}\label{main_8c_a43bafb28b29491ec7f871319b5a3b2f8}} 
+\#define {\bfseries F\+\_\+\+CPU}~16000000\+UL
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{main_8c_ae2946618e700f814e6147195c808f4c8}\label{main_8c_ae2946618e700f814e6147195c808f4c8}} 
+enum {\bfseries State\+\_\+t} \{ {\bfseries STATE\+\_\+\+LED\+\_\+\+ON}
+, {\bfseries BLINK\+\_\+\+STATE}
+, {\bfseries STATE\+\_\+\+LED\+\_\+\+OFF}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The state of a LED is changed by means of a push button. 
+
+\begin{DoxyAuthor}{Author}
+Juan de la Cruz Caravaca Guerrero 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+12/04/2022 
+\end{DoxyDate}
+\begin{DoxyParagraph}{Description\+:}
+A LED is toggled by means of a debounced pushbutton by using a FSM. ~\newline
+ 
+\end{DoxyParagraph}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+-\/-\/-\/-\/-\/-\/--- Local variables (Registers) -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---
+
+Variable to keep the state of the FSM
+
+Variable to read the button and store as TRUE/\+FALSE
+
+-\/-\/-\/-\/-\/-\/-\/-\/-\/--- SETUP-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---
+
+1) Ports are configured.
+
+-\/-\/-\/-\/-\/-\/-\/--- SUPERLOOP (FSM) -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---
+
+
+\begin{DoxyEnumerate}
+\item Check the EVENT in each iteration
+\item The TRANSITIONS and the OUTPUT are combined in a single switch-\/case. Therefore, the \char`\"{}next\+State\char`\"{} variable is not needed.
+\end{DoxyEnumerate}
