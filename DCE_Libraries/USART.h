@@ -21,7 +21,7 @@ void USART0_putString(char *strPointer);
 char USART0_getChar(void);
 
 /// ----------- INLINE FUNCTIONS -------------
-inline static void USART0_Init(uint16_t valueUBRR)
+static inline void USART0_Init(uint16_t valueUBRR)
 {
     /// -------------  SETUP -----------------------------------
 	//1.-Set baud rate

@@ -57,7 +57,7 @@ static inline void ADC_enaInterrupt() { SETBIT(ADCSRA, ADIE); }
 static inline void ADC_disableInterrupt() { CLEARBIT(ADCSRA, ADIE); }
 
 // TIMER1
-static inline void TMR1_CTC_EnaInterrupt() { SETBIT(TIMSK1, OCIE1A); }
-static inline void TMR1_CTC_DisInterrupt() { CLEARBIT(TIMSK1, OCIE1A); }
+static inline void TMR1_CTC_EnaInterrupt() { SETBIT(TIMSK1, OCIE1A); }	// Enables interrupt on compare match
+static inline void TMR1_CTC_DisInterrupt() { CLEARBIT(TIMSK1, OCIE1A); } // Disables interrupt on compare match
 
 #endif

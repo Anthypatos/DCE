@@ -18,7 +18,8 @@
 #define GPIO_B_MODE		DDRB
 
 ///Pin where every LED is connected.
-#define LED0_PIN		PORTB1
+#define LED0_PIN		PORTB0
+#define LED1_PIN		PORTB1
 
 ///MCU ports where the LED are connected.
 #define GPIO_B_OUT		PORTB
@@ -28,7 +29,7 @@
 static inline void GPIO_config(void)
 {
 	/// 1) LED as output
-	GPIO_B_MODE |= (1 << LED0_PIN);
+	GPIO_B_MODE |= (1 << LED0_PIN) | (1 << LED1_PIN);
 }
 
 #endif /* PORTS_H_ */
