@@ -1,8 +1,8 @@
 /**
-	@file		ADC.h
+	@file		OPTO_SENSORS.h
 	@author		Juan de la Cruz Caravaca Guerrero
-	@date		19/04/2022
-    @brief		Header file including macros to configure the ADC.
+	@date		10/05/2022
+    @brief		Header file including macros to configure the IR sensors of the robot.
     @par		Description 
 				The configuration can be modified by changing the macros.
 				For other MCU only this header file will need to be modified.
@@ -24,25 +24,20 @@
 
 #define ADC0		0
 #define ADC1		1
-#define ADC2		2
-#define ADC3		3
 #define ADC4		4
 #define ADC5		5
 #define ADC6		6
 #define ADC7		7
-#define ADC8		8
-#define ADC9		9
-#define ADC10		10
 
-#define SAMPLE1		1
-#define SAMPLE2		2
-#define SAMPLE4		4
-#define SAMPLE8		8
-#define SAMPLE16	16
+#define IR0			ADC7
+#define IR1			ADC6
+#define IR2			ADC5
+#define IR3			ADC4
+#define IR4			ADC1
 
 //--------------- PROTOTYPES ---------------------------------------
 uint16_t ADC_Read_Single_Poll(uint8_t channel);
-void ADC_Read(uint8_t channel);
+void check_IR_Sensor(uint8_t sensorIR_number);	
 
 
 //---------------- FUNCTIONS -----------------------------------------

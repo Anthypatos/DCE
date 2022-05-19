@@ -30,7 +30,7 @@ static inline void TMR1_CTC_Set(uint16_t value)
 { 
 	// Set the matching value in OCR1A
 	OCR1A = value;
-	
+
 	//---- @ 1024 ------------------//
 	//OCR1A = 1000;	// 64ms
 	//OCR1A = 10000;	// 640ms
@@ -59,8 +59,8 @@ static inline void TMR1_CTC_Stop(void) { TCCR1B &= ~((1 << CS12) | (1 << CS11) |
 	
 static inline void TMR1_HW_toggleOC1A(void)
 {
-	//1.- It is mandatory to set OC1A as output (Pin PB1)
-	DDRB |= (1 << DDB1);
+	//1.- It is mandatory to set OC1A as output (Pin PB5)
+	DDRB |= (1 << DDB5);
 	
 	//2.- Set Toggle as the hardware output in OC1A
 	TCCR1A &= ~(1 << COM1A1);	// Toggle OC1A on Compare Match.
