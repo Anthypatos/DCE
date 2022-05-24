@@ -27,7 +27,7 @@
 
 static volatile uint8_t iStart = 0;		// Number of times the starting sound has been played
 static volatile bool bSound = false;	// Marks if a sound must be played inside the timer's ISR
-static volatile uint16_t reading = 0;	// Reading for the IR0
+static volatile uint16_t reading = 1023;	// Reading for the IR0
 
 // -------------------------------- ISR ------------------------------------
 ISR(TIMER0_COMPA_vect) 

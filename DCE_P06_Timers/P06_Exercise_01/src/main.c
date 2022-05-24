@@ -3,11 +3,13 @@
 	@date		04/05/2022
     @brief		500ms - Hardware timer 
     @par		Description 
-				Use the 16-bit Timer1 to make the Arduino built-in LED blink. (1Hz)
+				Uses the 16-bit Timer1 to make the Arduino built-in LED blink. (1Hz)
 */
 
+#include <avr/io.h>
 #include <avr/interrupt.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include "../../../DCE_Libraries/TMR1.h"
 #include "../../../DCE_Libraries/EXT_INT.h"
 #include "../../../DCE_Libraries/MACROS.h"
